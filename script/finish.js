@@ -43,5 +43,6 @@ function backGroundtrans(time){
 let background = document.getElementById("backgroundUi")
     if(!time){
         background.classList.add("moon")
+        document.body.style.backgroundColor ="black"
     }
 }
