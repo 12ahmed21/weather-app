@@ -38,10 +38,19 @@ function uv(uv){
 function realFeel(feellike){
     let realFeelShow = document.getElementById("realFeel").innerText = feellike
 }
-function backGroundtrans(time){
+function backGroundtrans(sun,moon){
+let mood = 
+sun && !moon ? "/media/sun_PNG13421.png"
+     : !sun && moon ? "/media/R.png" :
+            sun && moon ? "/media/circle-8283400_960_720.png": "erron"
+let sets = 
+sun && !moon ? "#51A5B4"
+     : !sun && moon ? "black" :
+            sun && moon ? "#E92100": "none"
 
 let background = document.getElementById("backgroundUi")
-    if(!time){
-        background.classList.add("moon")
-    }
+let img = document.getElementById("sets")
+img.setAttribute("src",mood)
+document.body.style.backgroundColor =sets
+
 }

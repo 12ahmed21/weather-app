@@ -14,7 +14,9 @@ async function isSunSet(date) {
     fetch(`https://api.weatherapi.com/v1/astronomy.json?key=a4893458241a46a3978135819250111&q=egypt&dt=${date}`)
     .then( res => res.json())
     .then(data =>{
-        backGroundtrans(data.astronomy.astro.is_sun_up);
+        console.log(data);
+        
+        backGroundtrans(data.astronomy.astro.is_sun_up,data.astronomy.astro.is_moon_up);
     })
 }
 window.onload = takeApi();time()

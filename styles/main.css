@@ -18,14 +18,23 @@ body{
 .background-ui{
     width:280px ; 
     height: 280px;
-    background-color:var(--sun-color);
+
     border-radius: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    box-shadow: 0 0 42px 29px var(--sun-shadow);
+
     z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & img:nth-child(2) {
+      display: none;
+    }
+}
+.sun{
+      width:300px ; 
 }
 .time-cuntry{
 
@@ -60,7 +69,7 @@ main{
   width: 340px;
 }
 .box {
-  background: #7fc7d654;
+  background: #ffffff54;
   color: white;
   display: flex;
   align-items: center;
@@ -126,8 +135,13 @@ main{
 }
 
 .moon{
-  background-color: var(--moon-color);
-  box-shadow: 0 0 42px 29px var(--moon-shadow);
+  background-color:transparent;
+  box-shadow: none;
+  & img {
+    display: block;
+    width: 300px;
+    opacity: 0.8;
+  }
 }
 
 
