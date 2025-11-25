@@ -49,8 +49,8 @@ sun && !moon ? "#51A5B4"
             sun && moon ? "#E92100": "none"
 
 let background = document.getElementById("backgroundUi")
+
 let img = document.getElementById("sets")
 img.setAttribute("src",mood)
 document.body.style.backgroundColor =sets
-
 }
