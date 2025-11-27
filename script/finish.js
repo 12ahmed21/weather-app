@@ -12,10 +12,11 @@ function time(){
         let now = new Date()
         let hours = now.getHours()
         let minutes = now.getMinutes() < 10 ? `0${now.getMinutes()}`: now.getMinutes()
+        let amPm = hours < 12 ? "AM": hours > 12? "PM": "AM" 
         hours = hours % 12
         hours = hours ? hours : "12"
         let clock = document.getElementById("time")
-        clock.innerText = `${hours}:${minutes}`
+        clock.innerHTML = `<p>${hours}:${minutes}<span class="ampm">${amPm}</span></p>`
     },1000)
 }
 function countryAndCity(country,city){
@@ -23,7 +24,7 @@ let countryShow = document.getElementById("country").innerText = country;
 let cityShow = document.getElementById("city").innerText = city
 }
 function temp(temp){
-    let tempShow = document.getElementById("temp").innerText = temp
+    let tempShow = document.getElementById("temp").innerText = `${temp}°`
 }
 function wide(kph){
     let wideShow = document.getElementById("wideSpeed").innerText = kph
@@ -36,21 +37,17 @@ function uv(uv){
     let uvShow = document.getElementById("uv").innerText = uv
 }
 function realFeel(feellike){
-    let realFeelShow = document.getElementById("realFeel").innerText = feellike
+    let realFeelShow = document.getElementById("realFeel").innerText = `${feellike}°`
 }
-function backGroundtrans(sun,moon){
-let mood = 
-sun && !moon ? "/media/sun_PNG13421.png"
-     : !sun && moon ? "/media/R.png" :
-            sun && moon ? "/media/circle-8283400_960_720.png": "erron"
-let sets = 
-sun && !moon ? "#51A5B4"
-     : !sun && moon ? "black" :
-            sun && moon ? "#E92100": "none"
+function backGroundtrans(day){
+    let background = document.getElementById("backgroundUi")
 
-let background = document.getElementById("backgroundUi")
-
-let img = document.getElementById("sets")
-img.setAttribute("src",mood)
-document.body.style.backgroundColor =sets
+    let img = document.getElementById("sets")
+    if(day){
+        img.setAttribute("src","/media/sun_PNG13421.png")
+        document.body.style.backgroundColor ="#51A5B4"
+    }else{
+        img.setAttribute("src","/media/R.png")
+        document.body.style.backgroundColor ="black"
+    }
 }

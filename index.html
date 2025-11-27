@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta
+    property = "og:title"
+    content="weather wep"
+    />
+    <meta
+    property="og:description"
+    content="A simple weather website that shows current conditions for all Egyptian governorates."
+    >
+    <meta property="og:image" content="media/155542.png">
+    <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/root.css">
+    <link rel="shortcut icon" href="favicon.ico" type="/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>weather</title>
 </head>
 <body>
+            <div class="back h0"></div>
     <div class="loading" id="loading">
 <!-- From Uiverse.io by andrew-manzyk --> 
 <div class="loader">
@@ -84,28 +97,38 @@
       <img class="sun" src="/media/circle-8283400_960_720.png" id="sets" alt="">
     </div>
     <main>
-        <div class="time-cuntry">
+        <div class="time-cuntry" id="">
             <div class="time" id="time"></div>
-            <div class="country" id="country">
-                
-            </div>
-            <div class="city" id="city">
+            <div id="selecter" class="selecter">
 
-            </div>
+              <div class="country_place">
+                  <div class="country" id="country">
+                      
+                  </div>
+                  <div class="city" id="city">
+
+                  </div>
+              </div>
+              <i class="fa-solid fa-angle-down" id="angleDown"></i>
+
+              <div class="country-typer h0" id="chooseCountry">
+
+              </div>              
+          </div>
         </div>
         <div class="weather-contianer">
                 <div class="temp box" id="temp"></div>
                     <div class="wide box">
-                        <p id="wideSpeed">99</p>
+                        <p id="wideSpeed"></p>
                         <img src="/media/740828.png" alt="">
                     </div>
                     <div class="mood box">
                         <img id="statusIcon" src="//cdn.weatherapi.com/weather/64x64/night/116.png" alt="">
-                        <p id="status">Partly cloudy</p>
+                        <p id="status"></p>
                     </div>       
             <div class="bottom">
-                <div class="uv box"> UV <span id="uv">0.4</span></div>
-                <div class="real-feel box">real feel <span id="realFeel">41</span></div>
+                <div class="uv box">UV<span id="uv"></span></div>
+                <div class="real-feel box">real feel <span id="realFeel"></span></div>
             </div>               
             </div>                                    
     </main>
